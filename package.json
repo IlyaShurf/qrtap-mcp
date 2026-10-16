@@ -1,0 +1,59 @@
+{
+  "name": "qrtap-mcp",
+  "version": "1.0.4",
+  "mcpName": "io.github.IlyaShurf/qrtap",
+  "type": "module",
+  "description": "MCP (Model Context Protocol) stdio server for QRTap: editable QR codes, short links, public pages, guest reviews, booking requests and smart redirect rules as tools for AI agents.",
+  "license": "MIT",
+  "author": "QRTap (ИП Шуренков И.П., Kyrgyz Republic) <ceo@mozart.kg>",
+  "homepage": "https://app.qrtap.kg/developers",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IlyaShurf/qrtap-mcp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/IlyaShurf/qrtap-mcp/issues"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "claude",
+    "ai-agent",
+    "llm-tools",
+    "qr",
+    "qr-code",
+    "short-link",
+    "qrtap",
+    "analytics"
+  ],
+  "bin": {
+    "qrtap-mcp": "./bin/qrtap-mcp.mjs"
+  },
+  "files": [
+    "bin",
+    "dist",
+    "README.md",
+    "README.ru.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "clean": "rm -rf dist",
+    "start": "npm run build && node bin/qrtap-mcp.mjs",
+    "test": "vitest run",
+    "typecheck": "tsc -p tsconfig.json",
+    "prepack": "npm run clean && npm run build",
+    "prepublishOnly": "vitest run"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.0",
+    "typescript": "^5.8.3",
+    "vitest": "^3.2.4"
+  }
+}

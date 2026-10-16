@@ -1,0 +1,41 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.IlyaShurf/qrtap",
+  "title": "QRTap",
+  "description": "Editable QR codes, short links, public pages, reviews and bookings as tools for AI agents.",
+  "version": "1.0.4",
+  "websiteUrl": "https://app.qrtap.kg/developers",
+  "repository": {
+    "url": "https://github.com/IlyaShurf/qrtap-mcp",
+    "source": "github"
+  },
+  "packages": [
+    {
+      "registryType": "npm",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "identifier": "qrtap-mcp",
+      "version": "1.0.4",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "environmentVariables": [
+        {
+          "name": "QRTAP_API_KEY",
+          "description": "QRTap workspace API key. Issued by the workspace owner at app.qrtap.kg/workspace/api and shown once.",
+          "isRequired": true,
+          "isSecret": true,
+          "format": "string"
+        },
+        {
+          "name": "QRTAP_API_URL",
+          "description": "QRTap API base URL. Leave unset unless you were given a different host.",
+          "isRequired": false,
+          "isSecret": false,
+          "format": "string",
+          "default": "https://app.qrtap.kg"
+        }
+      ]
+    }
+  ]
+}
